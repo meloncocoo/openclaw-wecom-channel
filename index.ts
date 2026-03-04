@@ -12,7 +12,11 @@ const plugin = {
   register(api: OpenClawPluginApi) {
     setWecomRuntime(api.runtime);
     api.registerChannel({ plugin: wecomPlugin });
-    api.registerHttpHandler(handleWecomWebhookRequest);
+    api.registerHttpRoute({
+      path: "/wecom/message",
+      handler: handleWecomWebhookRequest,
+      auth: "plugin",
+    });
   },
 };
 
