@@ -2,7 +2,7 @@
 
 企业微信（WeCom/WeChat Work）频道插件，用于 [OpenClaw](https://openclaw.ai) / [Moltbot](https://github.com/moltbot/moltbot)。
 
-**基于 [@william.qian/simple-wecom](https://www.npmjs.com/package/@william.qian/simple-wecom)**，完全兼容 OpenClaw 2026.2.2-3+。
+**基于 [@william.qian/simple-wecom](https://www.npmjs.com/package/@william.qian/simple-wecom)**，完全兼容 OpenClaw 2026.3.2+。
 
 ## ✨ 特性
 
@@ -49,8 +49,12 @@ openclaw plugins install https://github.com/toboto/openclaw-wecom-channel
 ```bash
 git clone https://github.com/toboto/openclaw-wecom-channel.git
 cd openclaw-wecom-channel
+pnpm install
+pnpm run build
 openclaw plugins install . --link
 ```
+
+> **说明**：`--link` 安装时 OpenClaw 从宿主环境加载插件，不会使用插件目录下的 `node_modules`，因此需先执行 `pnpm run build` 将插件及其依赖（如 `fast-xml-parser`）打成单文件 `dist/index.js`，否则会报错 `Cannot find module 'fast-xml-parser'`。
 
 ## 🎯 推荐安装配套 Skill
 

@@ -3,8 +3,10 @@
   "version": "1.6.2",
   "type": "module",
   "description": "企业微信（WeCom）频道插件，用于 OpenClaw / Moltbot",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -31,12 +33,16 @@
   },
   "homepage": "https://github.com/toboto/openclaw-wecom-channel#readme",
   "readme": "README.md",
+  "files": [
+    "dist",
+    "openclaw.plugin.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "openclaw": {
     "extensions": [
-      "./index.ts"
+      "./dist/index.js"
     ]
   },
   "dependencies": {
@@ -50,6 +56,7 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "openclaw": "^2026.2.2-3"
+    "openclaw": "^2026.3.2",
+    "tsup": "^8.3.5"
   }
 }
