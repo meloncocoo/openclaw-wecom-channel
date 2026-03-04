@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "openclaw": "^2026.3.2",
-    "tsup": "^8.3.5"
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
   }
 }
